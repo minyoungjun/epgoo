@@ -1,0 +1,22 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+width:100%;
+margin:0 auto;
+}
+
+.wrap {
+min-width:1024px;
+display:block;
+}
+
+.header {
+position: relative;
+height:106px;
+display:block;
+margin:0 auto;
+border:1px solid red;
+
+}

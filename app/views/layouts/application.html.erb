@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Social</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+		<div class="wrapper">
+      <div style="width:960px; margin:0 auto;">
+        <div style="display:table-cell; width:250px; text-align:center">
+          <img src="/images/about.png"/>
+        </div>
+        <div class="logo"style="display:table-cell; width:500px; text-align:center;">
+          <img src="/images/logo.png"/>
+        </div>
+        <div style="display:table-cell; width:250px; text-align:center;" >
+          <img src="/images/company_all.png"/>
+        </div>
+      </div>
+		</div>
+
+<%= yield %>
+
+
+		<div class="footer">
+			<a href="#"><img src="/images/footer_logo.png"/></a>
+			<a href="#"><img src="/images/footer_about.png"/></a>
+			<a href="#"><img src="/images/footer_shop_link.png"/></a>
+			<a href="#"><img src="/images/footer_facebook_link.png"/></a>
+			<a href="#"><img src="/images/footer_twitter_link.png"/></a>
+		</div>
+</body>
+</html>
