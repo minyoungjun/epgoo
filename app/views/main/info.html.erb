@@ -23,12 +23,12 @@
         <h5 style="margin-top:0px;"><%=@company.subtitle%></h5>
       </div>
       <div class="top_button">
-        <button onclick="location.href='http://<%=@company.homepage%>';">
-          홈페이지 바로가기
-        </button>
-        <button style="margin-left:12px;" onclick="location.href='http://<%=@company.shopping%>'">
-          쇼핑몰 바로가기
-        </button>
+        <a href="http://<%=@company.homepage%>">
+          <img src="/images/homepage_go.png"/>
+        </a>
+        <a href="http://<%=@company.shopping%>">
+          <img src="/images/shopping_go.png"/>
+        </a>
       </div>
     </div>
   </div>
