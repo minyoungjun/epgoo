@@ -6,15 +6,26 @@
 			<div class="pxs_slider_wrapper">
 				<ul class="pxs_slider">
           <% @companies.each do |company|%>
-					<li><div style="background:url('/images/<%=company.big_image%>'); margin:0 auto; width:1000px; height:100%;"></div></li>
+					<li>
+            <div style="background:url('/images/<%=company.big_image%>'); margin:0 auto; width:1000px; height:100%; z-index:-2;">
+              <div style="width:230px; height:110px; border:1px solid red; position:relative; top:130px;left:65px;">
+                <h2 style="font-size:30px; padding-top:0px;margin-top:0px;color:#fff000;"><%=company.title%></h2>
+                <h3 style="color:#fff000; margin-top:10px;"><%=company.subtitle%></h3>
+
+              </div>
+            </div>
+          </li>
           <%end%>
 				</ul>
+      <img id="currentImage" style="position:absolute; z-index:0; margin-left:50%; top:585px;"src="/images/main.png"/>
+      </div>
         <div style="position:relative;">
           <ul class="pxs_thumbnails" >
             <% @companies.each do |company|%>
-            <li><img src="/images/<%=company.thumbnail_image%>" class="selected"/><span><%=company.title%></span></li>
+            <li><img src="/images/<%=company.thumbnail_image%>" class="selected"/><span><%#company.title%></span></li>
             <%end%>
           </ul>
+        </div>
 
 				<div class="pxs_navigation2">
 					<span class="pxs_prev"></span>
@@ -25,7 +36,6 @@
 					<span class="pxs_next"></span>
 				</div>
 			</div>
-      <img id="currentImage" style="position:absolute; z-index:-1; margin-left:50%; top:585px;"src="/images/main.png"/>
 		</div>
 
 		<!-- The JavaScript -->
@@ -456,4 +466,3 @@
 				$pxs_container.parallaxSlider();
 			});
       </script>
-

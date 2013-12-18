@@ -3,7 +3,6 @@
 	padding:0;
 }
 body{
-	font-family:"Trebuchet MS", "Myriad Pro", Arial, sans-serif;
 	font-size:14px;
 	overflow-x:hidden;
 }
@@ -13,8 +12,6 @@ h1{
 }
 h2{
 	font-size:20px;
-	padding:10px 0px 10px 0px;
-	margin:15px 0px 20px 0px;
 }
 a{
 	color:#555;
@@ -113,7 +110,7 @@ ul.pxs_slider li img{
 ul.pxs_thumbnails{
 	height:35px;
 	position:relative;
-	top:625px;
+	top:610px;
 	margin-left:50%;
   z-index:100;
   text-align:center;
