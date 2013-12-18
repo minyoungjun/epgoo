@@ -167,6 +167,9 @@
                       $($thumbs.eq(total_elems - 7)).addClass('selected');
                       $($thumbs.eq(total_elems - 6)).addClass('selected');
                       $($thumbs.eq(total_elems - 5)).addClass('selected');
+                      $($thumbs.eq(total_elems - 8)).removeClass('selected');
+                      $($thumbs.eq(total_elems - 9)).removeClass('selected');
+                      $($thumbs.eq(total_elems - 10)).removeClass('selected');
                     }
                     if (current > 2){
                       $($thumbs.eq(current + 4)).removeClass('selected');
@@ -223,8 +226,8 @@
 									var spaces	= one_image_w/(7);
 									$thumbs.each(function(i){
 										var $this 	= $(this);
-										var left	= spaces*(i+1) - $this.width()/2;
-										$this.css('left',left+'px');
+										var left	= spaces*(i+1) - 53;
+										$this.css('left', left+'px');
 											
 										//hovering the thumbs animates them up and down
 										$this.bind('mouseenter',function(){
@@ -371,20 +374,20 @@
 					$pxs_slider.stop().animate({
 						left	: slide_to + 'px'
 					},speed, easing);
+
           var thum_px = 75;
           var white_a = 391;
 
-
           if (current > 2 && current < total_elems - 3 ){
             $('.pxs_thumbnails').stop().animate({
-                left: (-50 - 120*(current) - thum_px) + 'px'
+                left: ( 0 - 120*(current) - 50 - 75) + 'px'
             },500);    
             $('#currentImage').stop().animate({
                 left: (322 - white_a ) + 'px' },500);
             }
           else{
             $('.pxs_thumbnails').stop().animate({
-                left: (-50 - 120*(3) - thum_px) + 'px'
+                left: (0 - 50 - 120*(3) - 75) + 'px'
             },500);    
             if (current == 2){
               $('#currentImage').stop().animate({
@@ -396,13 +399,13 @@
             }
             else if (current == 0){ 
               $('#currentImage').stop().animate({
-              left: (-38 - white_a) + 'px'},500);
+              left: (0 - 38 - white_a) + 'px'},500);
             }
           }
 
           if (current > total_elems - 4){
             $('.pxs_thumbnails').stop().animate({
-                left: (-50 - 120*(total_elems - 4) - thum_px) + 'px'
+                left: (0 - 50 - 120*(total_elems - 4) - 75) + 'px'
             },500); 
 
             if (current == total_elems - 3){
