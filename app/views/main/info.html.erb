@@ -22,7 +22,7 @@
       <ul id="carousel" class="elastislide-list">
         <% @company.photos.each do |photo|%>
           <li>
-            <a href="<%=photo.link_url%>"><img src="/images/<%=photo.file_name%>" alt="<%=photo.link_url%>" /></a>
+            <a href="http://<%=photo.link_url%>"><img src="/images/<%=photo.file_name%>" alt="<%=photo.content%>" /></a>
           </li>
         <%end%>
       </ul>
