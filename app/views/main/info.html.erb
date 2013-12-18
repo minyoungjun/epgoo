@@ -1,11 +1,26 @@
 <script src="/js/modernizr.custom.88338.js"></script>
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=1013123d66bd3c86be547f564ba76f57734b08c2" charset="utf-8"></script> 
+<script type="text/javascript"> 
+  var map;
+    function init() {
+          map = new daum.maps.Map(document.getElementById('map'), {
+                    center: new daum.maps.LatLng(37.537123, 127.005523)
+                        });
+
+              var marker = new daum.maps.Marker({
+                        position: new daum.maps.LatLng(37.537123, 127.005523)
+                            });
+                  marker.setMap(map);
+                    }
+</script> 
+
 <div class="info_container">
   <div class="info_top">
     <div class="top_con">
       <div class="top_float">
         <img src="/images/nuyalogo.png"/><br>
         <h3>업체명:<%=@company.title%></h3>
-        <h5><%=@company.subtitle%></h5>
+        <h5 style="margin-top:0px;"><%=@company.subtitle%></h5>
       </div>
       <div class="top_button">
         <button onclick="location.href='http://<%=@company.homepage%>';">
@@ -30,7 +45,8 @@
       <div>
         <%=@company.content.html_safe%>
       </div>
-
+      <div id="map" style="width:980px;height:300px;"></div> 
+      
     </div>
   </div>
 

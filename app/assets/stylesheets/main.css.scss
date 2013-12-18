@@ -11,7 +11,10 @@ body {
 
 a {
   border:none;
-text-decoration: none;
+  text-decoration: none;
+}
+a img {
+ border:0px;
 }
 .wrap {
 min-width:1024px;
@@ -79,6 +82,7 @@ margin:0 auto;
   width:980px;
   margin:0 auto;
   margin-top:27px;
+  margin-bottom:50px;
 }
 
 .logo {
