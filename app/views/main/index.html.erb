@@ -1,4 +1,5 @@
-		<div id="pxs_container" class="pxs_container">
+  <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <div id="pxs_container" class="pxs_container">
 			<div class="pxs_bg">
 				<div class="pxs_bg1"></div>
 			</div>
@@ -14,17 +15,19 @@
 					<li><img src="images/6.jpg" alt="Sixth Image" /></li>
 					<li><img src="images/6.jpg" alt="Sixth Image" /></li>
 				</ul>
-				<ul class="pxs_thumbnails">          
-					<li><img src="images/thumbs/5.jpg" alt="First Image" class="selected"/><span>하이</span></li>
-					<li><img src="images/thumbs/6.jpg" alt="Second Image"class="selected"/></li>
-					<li><img src="images/thumbs/5.jpg" alt="Third Image" class="selected"/></li>
-					<li><img src="images/thumbs/6.jpg" alt="Forth Image" class="selected"/></li>
-					<li><img src="images/thumbs/5.jpg" alt="Fifth Image" /></li>
-					<li><img src="images/thumbs/6.jpg" alt="Sixth Image" /></li>
-					<li><img src="images/thumbs/6.jpg" alt="Sixth Image" /></li>
-					<li><img src="images/thumbs/6.jpg" alt="Sixth Image" /></li>
-					<li><img src="images/thumbs/6.jpg" alt="Sixth Image" /></li>
-				</ul>
+        <div style="position:relative;">
+          <ul class="pxs_thumbnails" >          
+            <li><img src="images/thumbs/5.jpg" alt="First Image" class="selected"/><span>하이</span></li>
+            <li><img src="images/thumbs/6.jpg" alt="Second Image"class="selected"/></li>
+            <li><img src="images/thumbs/5.jpg" alt="Third Image" class="selected"/></li>
+            <li><img src="images/thumbs/6.jpg" alt="Forth Image" class="selected"/></li>
+            <li><img src="images/thumbs/5.jpg" alt="Fifth Image" /></li>
+            <li><img src="images/thumbs/6.jpg" alt="Sixth Image" /></li>
+            <li><img src="images/thumbs/6.jpg" alt="Sixth Image" /></li>
+            <li><img src="images/thumbs/6.jpg" alt="Sixth Image" /></li>
+            <li><img src="images/thumbs/6.jpg" alt="Sixth Image" /></li>
+          </ul>
+        </div>
 				<div class="pxs_navigation2">
 					<span class="pxs_prev"></span>
 					<span class="pxs_next"></span>
@@ -34,7 +37,7 @@
 					<span class="pxs_next"></span>
 				</div>
 			</div>
-      <img id="currentImage" style="position:absolute; z-index:-1; left:622px;top:525px;"src="/images/main.png"/>
+      <img id="currentImage" style="position:absolute; z-index:-1; margin-left:50%; top:585px;"src="/images/main.png"/>
 		</div>
 
 		<!-- The JavaScript -->
@@ -103,10 +106,6 @@
 										set the width of the thumbs
 										and spread them evenly
 									 */
-									$pxs_thumbnails.css({
-										'width'			: 840 + 'px',
-										'margin-left' 	: -495 + 'px'
-									});
 									var spaces	= one_image_w/(7);
 									$thumbs.each(function(i){
 										var $this 	= $(this);
@@ -365,49 +364,51 @@
 					$pxs_slider.stop().animate({
 						left	: slide_to + 'px'
 					},speed, easing);
+          var thum_px = 75;
+          var white_a = 391;
 
 
           if (current > 2 && current < total_elems - 3 ){
             $('.pxs_thumbnails').stop().animate({
-                left: (1060 - 120*(current)) + 'px'
+                left: (-50 - 120*(current) - thum_px) + 'px'
             },500);    
             $('#currentImage').stop().animate({
-                left: '622px' },500);
+                left: (322 - white_a ) + 'px' },500);
             }
           else{
             $('.pxs_thumbnails').stop().animate({
-                left: (1060 - 120*(3)) + 'px'
+                left: (-50 - 120*(3) - thum_px) + 'px'
             },500);    
             if (current == 2){
               $('#currentImage').stop().animate({
-              left: '502px' },500);
+              left: (202 - white_a) + 'px' },500);
             }
             else if (current == 1){
               $('#currentImage').stop().animate({
-              left: '382px'},500);
+              left: (82 - white_a) + 'px'},500);
             }
             else if (current == 0){ 
               $('#currentImage').stop().animate({
-              left: '262px'},500);
+              left: (-38 - white_a) + 'px'},500);
             }
           }
 
           if (current > total_elems - 4){
             $('.pxs_thumbnails').stop().animate({
-                left: (1060 - 120*(total_elems - 4)) + 'px'
+                left: (-50 - 120*(total_elems - 4) - thum_px) + 'px'
             },500); 
 
             if (current == total_elems - 3){
               $('#currentImage').stop().animate({
-              left: '742px' },500);
+              left: (442 - white_a ) + 'px' },500);
             }
             else if (current == total_elems - 2){
               $('#currentImage').stop().animate({
-              left: '862px'},500);
+              left: (562 - white_a) + 'px'},500);
             }
             else if (current == total_elems - 1){ 
               $('#currentImage').stop().animate({
-              left: '982px'},500);
+              left: (682 - white_a) + 'px'},500);
             }
           }
 

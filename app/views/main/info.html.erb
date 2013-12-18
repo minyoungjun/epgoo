@@ -1,0 +1,44 @@
+<script src="/js/modernizr.custom.88338.js"></script>
+<div class="info_container">
+  <div class="info_top">
+    <div class="top_con">
+      <div class="top_float">
+        <img src="/images/nuyalogo.png"/><br>
+        <h3>업체명:<%=@company.title%></h3>
+        <h5><%=@company.subtitle%></h5>
+      </div>
+      <div class="top_button">
+        <button onclick="location.href='http://<%=@company.homepage%>';">
+          홈페이지 바로가기
+        </button>
+        <button style="margin-left:12px;" onclick="location.href='http://<%=@company.shopping%>'">
+          쇼핑몰 바로가기
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="info_content">
+    <img src="/images/product_gallery.png"/>
+      <ul id="carousel" class="elastislide-list">
+        <% @company.photos.each do |photo|%>
+          <li>
+            <a href="<%=photo.link_url%>"><img src="/images/<%=photo.file_name%>" alt="<%=photo.link_url%>" /></a>
+          </li>
+        <%end%>
+      </ul>
+      <img src="/images/company_gallery.png"/>
+      <div>
+        <%=@company.content.html_safe%>
+      </div>
+
+    </div>
+  </div>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/jquerypp.custom.js"></script>
+		<script type="text/javascript" src="/js/jquery.elastislide.js"></script>
+		<script type="text/javascript">
+			
+			$( '#carousel' ).elastislide();
+			
+		</script>

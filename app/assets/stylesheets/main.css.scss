@@ -1,10 +1,12 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 body {
-width:100%;
-margin:0 auto;
+  font-family: 'Nanum Gothic', serif;
+  width:100%;
+  margin:0 auto;
 }
 
 .wrap {
@@ -20,3 +22,89 @@ margin:0 auto;
 border:1px solid red;
 
 }
+
+.info_container {
+
+}
+
+.info_top {
+  width:100%;
+  height:170px;
+  border-top:1px solid #999999;
+  background-color:#57b7dd;
+}
+.top_button button{
+  cursor:pointer;
+  width:134px;
+  height:37px;
+  border-radius:0;
+  border:1px solid #d7d9d7;
+  color:#716b52;
+  background-color:white;
+  font-size:15px;
+  margin-top:80px;
+}
+.info_top .top_con {
+  width:980px;
+  margin:0 auto;
+  padding-top:30px;
+
+}
+.info_top .top_con .top_float {
+  float:left;
+  width:360px;
+}
+.info_top .top_con .top_button{
+margin:0 auto;
+}
+
+.top_con h3, h5 {
+  color:#fff000;
+}
+.top_con h3{
+  font-size:25px;
+  margin-bottom:10px;
+  margin-top:5px;
+}
+.top_con h5 {
+  font-size:13px;
+}
+
+
+.info_content{
+  width:980px;
+  margin:0 auto;
+  margin-top:27px;
+}
+
+.logo {
+  margin: 0 auto;
+  text-align:center;
+
+}
+.wrapper{
+	width:960px;
+	margin:20px auto;
+}
+.clear{
+	clear:both;
+}
+.footer{
+	text-align:center;
+	padding:10px 10px 20px 10px;
+	clear:both;
+	margin-top:10px;
+}
+.footer a{
+	margin:0px 10px;
+}
+/* Slider Style */
+.pxs_container{
+	width:100%;
+  height:682px;
+	position:relative;
+	overflow:hidden;
+  background-color:#f8f8f8;
+  z-index:0;
+}
+

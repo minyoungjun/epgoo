@@ -1,0 +1,41 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin_box {
+  width:930px;
+
+  margin:0 auto;
+}
+
+.admin_box .white_box {
+  width:770px;
+  background-color:#fff;
+  margin-left:165px;
+}
+.text_box {
+  padding-top:12px;
+  margin:0 auto;
+  width:680px;
+}
+
+.text_box p {
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+.edit input[type="text"]{
+  border:1px solid #d7d8d8;
+  width:340px;
+  height:25px;
+  font-size:15px;
+  text-indent: 10px;
+}
+.edit {
+border-top: 1px solid #bbbbba;
+border-collapse:collapse;
+}
+.edit td {
+ border-bottom: 1px solid #bbbbba;
+
+}

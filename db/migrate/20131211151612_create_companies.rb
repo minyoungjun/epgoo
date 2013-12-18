@@ -11,6 +11,9 @@ class CreateCompanies < ActiveRecord::Migration
       t.string  :logo_image
       t.string  :homepage
       t.string  :shopping
+      t.string  :address
+      t.string  :phone
+      t.string  :portfolio
       t.timestamps
     end
   end

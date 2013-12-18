@@ -1,0 +1,139 @@
+<link href="/css/admin.css" rel="stylesheet" type="text/css" media="all" />
+<script src="/tinymce/js/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+        selector: "textarea",
+        plugins: [
+                "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                "table contextmenu directionality emoticons template textcolor paste fullpage textcolor"
+        ],
+
+        toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+        toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | inserttime preview | forecolor backcolor",
+        toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft",
+
+        menubar: false,
+        toolbar_items_size: 'small',
+
+        style_formats: [
+                {title: 'Bold text', inline: 'b'},
+                {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                {title: 'Example 1', inline: 'span', classes: 'example1'},
+                {title: 'Example 2', inline: 'span', classes: 'example2'},
+                {title: 'Table styles'},
+                {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+        ],
+
+        templates: [
+                {title: 'Test template 1', content: 'Test 1'},
+                {title: 'Test template 2', content: 'Test 2'}
+        ]
+});</script>
+
+<div class="admin_box">
+  <div style="float:left;width:160px; height:100px;">
+    <img src="/images/register_r.png"/>
+    <img src="/images/edit_r.png"/>
+  </div>
+  <div class="white_box">
+      <div class="text_box">
+    <form action="/admin/new_info" method="post">
+        <p style="color:#754c24;">등록할 업체를 양식에 맞춰 올려주세요.</p>
+        <table class="edit">
+          <tr>
+            <td style="width:100px;">
+              <p>1. 업체명:</p>
+            </td>
+            <td>
+              <input type="text" name="title">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>2. 간단 설명</p>
+            </td>
+            <td>
+              <input type="text" name="subtitle">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>3. 주소:</p>
+            </td>
+            <td>
+              <input type="text" name="address">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>4. 대표전화:</p>
+            </td>
+            <td>
+              <input type="text" name="phone">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>5. 홈페이지:</p>
+            </td>
+            <td>
+              <input type="text" name="homepage">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>6. 쇼핑몰주소:</p>
+            </td>
+            <td>
+              <input type="text" name="shopping">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <p>7. 업체소개서:</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="file" name="portfolio">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>8. 업체 로고(썸네일):</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="file" name="thumbnail_image">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>9. 업체메인이미지(메인배경으로 보여질 화면입니다.):</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="file" name="main">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>10. 업체 소개 내용</p>
+            </td>
+          </tr>
+        </table>
+      <textarea name="content" style="width:100%;"></textarea>
+      <div style="text-align:center; padding-top:20px; padding-bottom:20px;">
+        <input src="/images/register_btn.png"type="image" value="제출">
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
