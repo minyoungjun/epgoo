@@ -23,7 +23,11 @@
   color:#4d4d4d;
   font-weight:bold;
 }
-
+.edit tr td img{
+vertical-align:middle;
+width:100px;
+height:70px;
+}
 .edit input[type="text"]{
   border:1px solid #d7d8d8;
   width:340px;

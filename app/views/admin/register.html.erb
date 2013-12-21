@@ -39,7 +39,7 @@ tinymce.init({
   </div>
   <div class="white_box">
       <div class="text_box">
-    <form action="/admin/new_info" method="post">
+    <form action="/admin/new_info" method="post" enctype="multipart/form-data">
         <p style="color:#754c24;">등록할 업체를 양식에 맞춰 올려주세요.</p>
         <table class="edit">
           <tr>
@@ -119,7 +119,7 @@ tinymce.init({
           </tr>
           <tr>
             <td>
-              <input type="file" name="main">
+              <input type="file" name="big_image">
             </td>
           </tr>
           <tr>
