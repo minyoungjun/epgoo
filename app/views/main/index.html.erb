@@ -99,6 +99,10 @@
 										o.speed,
 										o.easing,
 										o.easingBg);
+                    var i;
+                    for (i=0; i <= total_elems - 1; i++){
+                      $($thumbs.eq(i)).removeClass('selected');
+                    }
 
                     $($thumbs.eq(current + 3)).addClass('selected');
                     $($thumbs.eq(current - 3)).addClass('selected');
@@ -113,7 +117,6 @@
 
                     $($thumbs.eq(current + 2)).addClass('selected');
                     if (current < total_elems - 3){
-                      $($thumbs.eq(current - 4)).removeClass('selected');
                     }
                     else{
                       $($thumbs.eq(total_elems - 7)).addClass('selected');
@@ -123,15 +126,11 @@
                     }
 
                     if (current > 2){
-                      $($thumbs.eq(current + 4)).removeClass('selected');
                     }
                     else{
                       $($thumbs.eq(4)).addClass('selected');
                       $($thumbs.eq(5)).addClass('selected');
                       $($thumbs.eq(6)).addClass('selected');
-                      $($thumbs.eq(7)).removeClass('selected');
-                      $($thumbs.eq(8)).removeClass('selected');
-                      $($thumbs.eq(9)).removeClass('selected');
 
                     }
 
@@ -151,6 +150,9 @@
 										o.speed,
 										o.easing,
 										o.easingBg);
+                    for (i=0; i <= total_elems - 1; i++){
+                      $($thumbs.eq(i)).removeClass('selected');
+                    }
                     $($thumbs.eq(current - 3)).addClass('selected');
                     $($thumbs.eq(current + 3)).addClass('selected');
                     $($thumbs.eq(current - 2)).addClass('selected');
@@ -161,26 +163,18 @@
 
                     $($thumbs.eq(current + 2)).addClass('selected');
                     if (current < total_elems - 3){
-                      $($thumbs.eq(current - 4)).removeClass('selected');
                     }
                     else{
                       $($thumbs.eq(total_elems - 7)).addClass('selected');
                       $($thumbs.eq(total_elems - 6)).addClass('selected');
                       $($thumbs.eq(total_elems - 5)).addClass('selected');
-                      $($thumbs.eq(total_elems - 8)).removeClass('selected');
-                      $($thumbs.eq(total_elems - 9)).removeClass('selected');
-                      $($thumbs.eq(total_elems - 10)).removeClass('selected');
                     }
                     if (current > 2){
-                      $($thumbs.eq(current + 4)).removeClass('selected');
                     }
                     else{
                       $($thumbs.eq(4)).addClass('selected');
                       $($thumbs.eq(5)).addClass('selected');
                       $($thumbs.eq(6)).addClass('selected');
-                      $($thumbs.eq(7)).removeClass('selected');
-                      $($thumbs.eq(8)).removeClass('selected');
-                      $($thumbs.eq(9)).removeClass('selected');
                       
                     }
 
@@ -281,6 +275,9 @@
 										o.speed,
 										o.easing,
 										o.easingBg);
+                    for (i=0; i <= total_elems - 1; i++){
+                      $($thumbs.eq(i)).removeClass('selected');
+                    }
 
                     $($thumbs.eq(current - 3)).addClass('selected');
                     $($thumbs.eq(current + 3)).addClass('selected');
@@ -292,7 +289,6 @@
 
                     $($thumbs.eq(current + 2)).addClass('selected');
                     if (current < total_elems - 4){
-                      $($thumbs.eq(current - 4)).removeClass('selected');
                     }
                     else{
                       $($thumbs.eq(total_elems - 7)).addClass('selected');
@@ -300,15 +296,11 @@
                       $($thumbs.eq(total_elems - 5)).addClass('selected');
                     }
                     if (current > 2){
-                      $($thumbs.eq(current + 4)).removeClass('selected');
                     }
                     else{
                       $($thumbs.eq(4)).addClass('selected');
                       $($thumbs.eq(5)).addClass('selected');
                       $($thumbs.eq(6)).addClass('selected');
-                      $($thumbs.eq(7)).removeClass('selected');
-                      $($thumbs.eq(8)).removeClass('selected');
-                      $($thumbs.eq(9)).removeClass('selected');
                       
                     }
 
