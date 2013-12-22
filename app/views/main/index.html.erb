@@ -105,11 +105,16 @@
                     }
 
                     $($thumbs.eq(current + 3)).addClass('selected');
-                    $($thumbs.eq(current - 3)).addClass('selected');
 
-                    $($thumbs.eq(current - 2)).addClass('selected');
-
-                    $($thumbs.eq(current - 1)).addClass('selected');
+                    if (current - 3 >= 0){
+                      $($thumbs.eq(current - 3)).addClass('selected');
+                    }
+                    if (current - 2 >= 0){
+                      $($thumbs.eq(current - 2)).addClass('selected');
+                    }
+                    if (current - 1 >= 0){
+                      $($thumbs.eq(current - 1)).addClass('selected');
+                    }
 
                     $($thumbs.eq(current)).addClass('selected');
 
@@ -122,7 +127,6 @@
                       $($thumbs.eq(total_elems - 7)).addClass('selected');
                       $($thumbs.eq(total_elems - 6)).addClass('selected');
                       $($thumbs.eq(total_elems - 5)).addClass('selected');
-
                     }
 
                     if (current > 2){
@@ -153,10 +157,19 @@
                     for (i=0; i <= total_elems - 1; i++){
                       $($thumbs.eq(i)).removeClass('selected');
                     }
-                    $($thumbs.eq(current - 3)).addClass('selected');
+
+                    if (current - 3 >= 0){
+                      $($thumbs.eq(current - 3)).addClass('selected');
+                    }
+                    if (current - 2 >= 0){
+                      $($thumbs.eq(current - 2)).addClass('selected');
+                    }
+                    if (current - 1 >= 0){
+                      $($thumbs.eq(current - 1)).addClass('selected');
+                    }
+
+
                     $($thumbs.eq(current + 3)).addClass('selected');
-                    $($thumbs.eq(current - 2)).addClass('selected');
-                    $($thumbs.eq(current - 1)).addClass('selected');
                     $($thumbs.eq(current)).addClass('selected');
 
                     $($thumbs.eq(current + 1)).addClass('selected');
@@ -279,10 +292,16 @@
                       $($thumbs.eq(i)).removeClass('selected');
                     }
 
-                    $($thumbs.eq(current - 3)).addClass('selected');
+                    if (current - 3 >= 0){
+                      $($thumbs.eq(current - 3)).addClass('selected');
+                    }
+                    if (current - 2 >= 0){
+                      $($thumbs.eq(current - 2)).addClass('selected');
+                    }
+                    if (current - 1 >= 0){
+                      $($thumbs.eq(current - 1)).addClass('selected');
+                    }
                     $($thumbs.eq(current + 3)).addClass('selected');
-                    $($thumbs.eq(current - 2)).addClass('selected');
-                    $($thumbs.eq(current - 1)).addClass('selected');
                     $($thumbs.eq(current)).addClass('selected');
 
                     $($thumbs.eq(current + 1)).addClass('selected');
