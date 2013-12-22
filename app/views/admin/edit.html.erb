@@ -33,24 +33,8 @@ tinymce.init({
         ]
 });</script>
 <div class="info_container">
-  <div class="info_top">
-    <div class="top_con">
-      <div class="top_float">
-        <img src="/images/nuyalogo.png"/><br>
-        <h3>업체명:<%=@company.title%></h3>
-        <h5><%=@company.subtitle%></h5>
-      </div>
-      <div class="top_button">
-        <button onclick="location.href='http://<%=@company.homepage%>';">
-          홈페이지 바로가기
-        </button>
-        <button style="margin-left:12px;" onclick="location.href='http://<%=@company.shopping%>'">
-          쇼핑몰 바로가기
-        </button>
-      </div>
-    </div>
-  </div>
   <div class="info_content">
+  
     <img src="/images/product_gallery.png"/>
       <table class="edit">
         <% @company.photos.each do |photo|%>
@@ -73,15 +57,116 @@ tinymce.init({
           </form>
         <%end%>
       </table>
+      <p>이미지 추가</p>
+      <form action="/admin/photo_add/<%=@company.id%>" method="post" enctype="multipart/form-data">
+        링크:<input type="text" name="link_url">
+        <input type="file" name="file">
+        <input type="image" src="/images/add_s.png">
+        
+      </form>
       <br><br>
       <img src="/images/company_gallery.png"/>
       <div>
-      <form action="#">
+
+        <form action="/admin/edit_process/<%=@company.id%>" method = "post" enctype="multipart/form-data">
+        <table class="edit">
+          <tr>
+            <td style="width:100px;">
+              <p>1. 업체명:</p>
+            </td>
+            <td>
+              <input type="text" name="title" value="<%=@company.title%>">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>2. 간단 설명</p>
+            </td>
+            <td>
+              <input type="text" name="subtitle" value="<%=@company.subtitle%>">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>3. 주소:</p>
+            </td>
+            <td>
+              <input type="text" name="address" value="<%=@company.address%>">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>4. 대표전화:</p>
+            </td>
+            <td>
+              <input type="text" name="phone" value = "<%=@company.phone%>">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>5. 홈페이지:</p>
+            </td>
+            <td>
+              <input type="text" name="homepage" value ="<%=@company.homepage%>">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>6. 쇼핑몰주소:</p>
+            </td>
+            <td>
+              <input type="text" name="shopping" value="<%=@company.shopping%>">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <p>7. 업체소개서:</p>
+              <a href="/portfolio/<%=@company.portfolio%>"><%=@company.portfolio%></a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="file" name="portfolio">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>8. 업체 로고(썸네일):</p>
+        <img src="/images/<%=@company.thumbnail_image%>"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="file" name="thumbnail_image">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>9. 업체메인이미지(메인배경으로 보여질 화면입니다.):</p>
+        <img src="/images/<%=@company.big_image%>" style="width:200px; height:100px;"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="file" name="big_image">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>10. 업체 소개 내용</p>
+            </td>
+          </tr>
+        </table>
+
         <textarea name="content" style="width:100%; height:500px;">
           <%=@company.content.html_safe%>
         
         </textarea>
-        <input type="submit">
+        <div style="text-align:center; margin-top:20px;">
+        <input type="image" src="/images/revise.png">
+        </div>
       </form>
       </div>
 
