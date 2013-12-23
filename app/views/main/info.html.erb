@@ -4,11 +4,11 @@
     var map;
     window.onload = function() {
           map = new daum.maps.Map(document.getElementById('map'), {
-                    center: new daum.maps.LatLng(37.537123, 127.005523)
+                    center: new daum.maps.LatLng(<%=@company.latitude%>, <%=@company.longitude%>)
                         });
 
               var marker = new daum.maps.Marker({
-                        position: new daum.maps.LatLng(37.537123, 127.005523)
+                        position: new daum.maps.LatLng(<%=@company.latitude%>, <%=@longitude%>)
                             });
                   marker.setMap(map);
                     }
