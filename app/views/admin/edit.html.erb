@@ -143,7 +143,7 @@ tinymce.init({
           <tr>
             <td>
               <p>8. 업체 로고(썸네일):</p>
-        <img src="/images/<%=@company.thumbnail_image%>"/>
+        <img src="/images/company/<%=@company.thumbnail_image%>"/>
             </td>
           </tr>
           <tr>
@@ -154,7 +154,7 @@ tinymce.init({
           <tr>
             <td>
               <p>9. 업체메인이미지(메인배경으로 보여질 화면입니다.):</p>
-        <img src="/images/<%=@company.big_image%>" style="width:200px; height:100px;"/>
+        <img src="/images/company/<%=@company.big_image%>" style="width:200px; height:100px;"/>
             </td>
           </tr>
           <tr>
@@ -162,9 +162,28 @@ tinymce.init({
               <input type="file" name="big_image">
             </td>
           </tr>
+
           <tr>
             <td>
-              <p>10. 업체 소개 내용</p>
+              <p>위도</p>
+            </td>
+            <td>
+              <input type="text"name="latitude">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p>경도</p>
+            </td>
+            <td>
+              <input type="text" name="longitude">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p> 업체 소개 내용</p>
             </td>
           </tr>
         </table>

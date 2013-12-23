@@ -1,6 +1,15 @@
 class AdminController < ApplicationController
 
 
+  def delete
+
+    company = Company.find(params[:id])
+    company.destroy
+    
+    redirect_to :back
+
+  end
+
   def list
     @companies = Company.all
   end
@@ -34,6 +43,8 @@ class AdminController < ApplicationController
     company.phone = params[:phone]
     company.homepage = params[:homepage]
     company.shopping = params[:shopping]
+    company.latitude = params[:latitude]
+    company.longitude = params[:longitude]
   
     if params[:big_image] != nil
       company.big_image = SecureRandom.hex(5) + params[:big_image].original_filename[-5..-1]
