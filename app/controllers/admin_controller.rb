@@ -132,7 +132,7 @@ class AdminController < ApplicationController
       company.thumbnail_image = SecureRandom.hex(5) + params[:thumbnail_image].original_filename[-5..-1]
     end
     if params[:portfolio] != nil
-      company.portfolio = SecureRandom.hex(5) + params[:portfolio].original_filename[-5..-1]
+      company.portfolio = params[:portfolio].original_filename
     end
 
     if company.save
