@@ -19,7 +19,7 @@
 		left: 50%;
 		margin-left: -540px;
 		width: 980px;
-		background: rgba(255,255,255,.8);
+		background: url('/images/white.png');
 		position: absolute;
 		z-index: 101;
 		padding: 30px 40px 34px;
