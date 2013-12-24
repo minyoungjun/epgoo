@@ -56,7 +56,7 @@ width:1000px; /*1264px window width times number of images*/
 	height:600px;
 	background-repeat:repeat;
 	background-position:top left;
-background-color:#57b7dd;
+  background-color:#ffffff;
 }
 .pxs_bg .pxs_bg1{
   z-index:-3;

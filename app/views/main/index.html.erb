@@ -5,24 +5,23 @@
 			</div>
 			<div class="pxs_slider_wrapper">
 				<ul class="pxs_slider">
+          <% current = 0%>
           <% @companies.each do |company|%>
 					<li>
-            <div style="background:url('/images/company/<%=company.big_image%>'); margin:0 auto; width:1000px; height:100%; z-index:-2;">
-              <div style="width:250px; position:relative; top:130px;left:65px;">
-                <h2 style="font-size:30px; padding-top:0px;margin-top:0px;color:#fff000;"><%=company.title%></h2>
-                <h3 style="color:#fff000; margin-top:10px;"><%=company.subtitle%></h3>
-                <br>
-                <a href="/main/info/<%=company.id%>">
-                  <img src="/images/detail.png"/>
-                </a>
-                <br>
-                <br>
-                <br>
-                <img src="/images/product_link.png"/>
-                <img src="/images/company_link.png"/>
-              </div>
-              <div style="float:right; margin-right:150px; cursor:pointer; position:relative;top:-200px;width:500px; height:450px;"onclick="location.href='/main/info/<%=company.id%>';" >
-                
+            <div style=" margin:0 auto; width:980px; height:100%; z-index:-2;">
+              <div id="div_<%=current%><%current = current + 1%>" style="background:url('/images/company/<%=company.big_image%>'); left:50%; margin-left:-970px; position:relative; width:1940px; height:600px;">
+                <div style="float:left; margin-left:480px; position:relative; top:460px; width:380px; height:110px;" >
+                  <div style="float:left; height:110px; width: 110px; border-radius:55px; cursor:pointer;"onclick="location.href='/main/portfolio/<%=company.portfolio%>';">
+                  </div>
+                  
+                  <div style="float:left; margin-left:21px; height:110px; width: 110px; border-radius:55px; cursor:pointer;"onclick="location.href='http://<%=company.shopping%>';">
+                  </div>
+                  <div style="float:left; height:110px; margin-left:22px;  width: 110px; border-radius:55px; cursor:pointer;"onclick="location.href='/main/info/<%=company.id%>';">
+                  </div>
+
+                </div>
+                <div style="float:right; position:relative; width:330px; top:30px; height:30px; margin-right:340px; cursor:pointer;z-index:100;" onclick="location.href='http://<%=company.homepage%>';">
+                </div>
               </div>
             </div>
           </li>
@@ -30,13 +29,6 @@
 				</ul>
       <img id="currentImage" style="position:absolute; z-index:0; margin-left:50%; top:585px;"src="/images/main.png"/>
       </div>
-        <div style="position:relative;">
-          <ul class="pxs_thumbnails" >
-            <% @companies.each do |company|%>
-            <li><img src="/images/company/<%=company.thumbnail_image%>" class="thumbnail selected"/><span><%#company.title%></span></li>
-            <%end%>
-          </ul>
-        </div>
 
 				<div class="pxs_navigation2">
 					<span class="pxs_prev"></span>
@@ -46,6 +38,14 @@
 					<span class="pxs_prev"></span>
 					<span class="pxs_next"></span>
 				</div>
+        <div style="position:relative;">
+          <ul class="pxs_thumbnails" >
+            <% @companies.each do |company|%>
+            <li><img src="/images/company/<%=company.thumbnail_image%>" class="thumbnail selected"/><span><%#company.title%></span></li>
+            <%end%>
+          </ul>
+        </div>
+
 			</div>
 		</div>
 
@@ -385,7 +385,9 @@
 					$pxs_slider.stop().animate({
 						left	: slide_to + 'px'
 					},speed, easing);
-
+          $('#div_' + String(current - 1)).animate({ opacity: 0},1000);
+          $('#div_' + String(current + 1)).animate({opacity:0}, 1000);
+          $('#div_' + String(current)).animate({opacity:1}, 1000);
           var thum_px = 75;
           var white_a = 391;
 

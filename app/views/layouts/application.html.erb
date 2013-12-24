@@ -20,7 +20,7 @@
           </a>
         </div>
         <div style="display:table-cell; width:250px; text-align:center;" >
-          <img src="/images/company_all.png" style="display:none;"/>
+          <a href="#" data-reveal-id="myModal" data-animation="fade"><img src="/images/company_all.png"/></a>
         </div>
       </div>
 		</div>
@@ -34,5 +34,28 @@
 			<a href="http://epsocial.kr/"><img src="/images/footer_shop_link.png"/></a>
 			<a href="https://www.facebook.com/eunpyeongsocial"><img src="/images/footer_facebook_link.png"/></a>
 		</div>
+    <div id="myModal" class="reveal-modal">
+      <p style="color:#666666; font-size:15px; ">* 아래 업체를 클릭하시면 상세 페이지로 이동합니다.</p>
+      <hr style="border-top:1px solid #666666; border-bottom:1px solid #666666;">
+        <%num = 1%>
+        <table style="margin-top:10px;">
+            
+          <% Company.all.each do |company|%>
+            <%if num%6 == 1%>
+              <tr>
+            <%end%>
+              <td style="height:40px; width:175px;  ">
+                <a href="/main/info/<%=company.id%>" style="font-size: 15px; color:#0071bc; margin-left: 20px;"><%=company.title%> ></a>
+              </td>
+              <% if num%6 ==0 %>
+                </tr>
+              <%end%>
+              <%num = num + 1%>
+            <%end%>
+          </table>
+
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
 </body>
 </html>
