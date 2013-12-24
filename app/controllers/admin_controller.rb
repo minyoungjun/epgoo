@@ -20,6 +20,13 @@ class AdminController < ApplicationController
 
   end
 
+  def delete_photo
+    photo = Photo.find(params[:id])
+    photo.delete
+    redirect_to :back
+
+  end
+
   def delete
 
     company = Company.find(params[:id])
