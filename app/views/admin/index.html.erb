@@ -1,0 +1,39 @@
+<style>
+
+body {
+  background:url('/images/admin_bg2.jpg');
+}
+
+
+.login {
+
+margin:0 auto; background-image:url('/images/admin_bg.png'); width:332px; height:335px;
+margin-bottom:50px;
+}
+
+.login form input[type="text"], input[type="password"]{
+  border:1px solid #d0d2d3;
+  height:35px;
+  width:290px;
+  border-radius:5px;
+  font-size:15px;
+  text-indent:10px;
+}
+.login form input {
+  margin-top:15px;
+
+}
+
+</style>
+<div style="margin:0 auto; text-align:center; padding-top:60px;">
+  <img src="/images/admin_logo.png"/>
+
+  <div class="login">
+    <form action="/user/login_process" method="post">
+      <input type="text"name="idid" style="margin-top:160px;"><br>
+      <input type="password" name="password"><br>
+      <input type="image" src="/images/login.png">
+    </form>
+  </div>
+
+</div>

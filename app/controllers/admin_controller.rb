@@ -1,5 +1,24 @@
 class AdminController < ApplicationController
 
+  before_filter :is_admin, :except => [:index, :login_process]
+
+  def index
+
+
+  end
+
+  def login_process
+
+    if params[:idid] == "admin" && params[:password] == "ep1234"
+      session[:admin] = "admin"
+      redirect_to :action => "list"
+    else
+
+      redirect_to :back
+    end
+
+
+  end
 
   def delete
 
