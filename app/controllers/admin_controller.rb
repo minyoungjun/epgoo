@@ -86,7 +86,7 @@ class AdminController < ApplicationController
       thumbnail_image.close
     end
     if params[:portfolio] != nil
-      company.portfolio = SecureRandom.hex(5) + params[:portfolio].original_filename[-5..-1]
+      company.portfolio = params[:portfolio].original_filename
         portfolio = File.open(Rails.root.join("public", "portfolio", company.portfolio), "wb")
         portfolio.write(params[:portfolio].read)
         portfolio.close
