@@ -98,19 +98,29 @@ class AdminController < ApplicationController
     company.phone = params[:phone]
     company.homepage = params[:homepage]
     company.shopping = params[:shopping]
-    company.big_image = SecureRandom.hex(5) + params[:big_image].original_filename[-5..-1]
-    company.thumbnail_image = SecureRandom.hex(5) + params[:thumbnail_image].original_filename[-5..-1]
+
+    if params[:big_image] != nil
+      company.big_image = SecureRandom.hex(5) + params[:big_image].original_filename[-5..-1]
+    end
+    if params[:thumbnail_image] != nil
+      company.thumbnail_image = SecureRandom.hex(5) + params[:thumbnail_image].original_filename[-5..-1]
+    end
     if params[:portfolio] != nil
       company.portfolio = SecureRandom.hex(5) + params[:portfolio].original_filename[-5..-1]
     end
 
     if company.save
-      big_image = File.open(Rails.root.join("public", "images", "company", company.big_image), "wb")
-      big_image.write(params[:big_image].read)
-      big_image.close
-      thumbnail_image = File.open(Rails.root.join("public", "images", "company", company.thumbnail_image), "wb")
-      thumbnail_image.write(params[:thumbnail_image].read)
-      thumbnail_image.close
+      if params[:big_image] != nil
+        big_image = File.open(Rails.root.join("public", "images", "company", company.big_image), "wb")
+        big_image.write(params[:big_image].read)
+        big_image.close
+      end
+
+      if params[:thumbnail_image] != nil
+        thumbnail_image = File.open(Rails.root.join("public", "images", "company", company.thumbnail_image), "wb")
+        thumbnail_image.write(params[:thumbnail_image].read)
+        thumbnail_image.close
+      end
       if params[:portfolio] != nil
         portfolio = File.open(Rails.root.join("public", "portfolio", company.portfolio), "wb")
         portfolio.write(params[:portfolio].read)
